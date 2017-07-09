@@ -8,126 +8,140 @@ html, body {
     padding: 0;
 }
 
-button:focus {
-  outline: 0;
-}
+header {
+  width: inherit;
+  height: 12%;
 
-.header {
+  position: fixed;
+
+  box-sizing: border-box;
+  padding-top: 1%;
+  padding-bottom: 1%;
+
   box-shadow:
     inset 1px 1px 0 0 #ffffff,
     inset -1px -1px 0 0 #475e5e;
   background-color: #94b8b8;
-  border-style: solid;
-  border-width: 1px;
   border-color: #3d5c5c;
+  z-index: 2;
 }
 
-#top-header {
-  position: fixed;
-  width: inherit;
-  height: 10%;
-  padding-top: 1%;
+nav {
+  height: 100%;
+  width: 100%;
+  position: absolute;
 }
 
-.inside-header {
-  display: inline-block;
+button:focus {
+  outline: none;
+}
 
-  margin-right: 2.5%;
-  height: 75%;
+button#title:hover {
+  border-color: #F2C2CD;
+  border-style: solid;
+  border-width: thick;
+}
+
+nav > button {
   width: 10%;
+  height: 65%;
+
+  float: right;
 
   color: #ffffff;
   font-family: 'Press Start 2P', cursive;
   text-shadow: -1px 0 #3d5c5c, 0 1px #3d5c5c, 1px 0 #3d5c5c, 0 -1px #3d5c5c;
   font-size: 90%;
 
-  float: right;
+
+  margin-right: 2.5%;
+
+  box-shadow:
+    inset 1px 1px 0 0 #ffffff,
+    inset -1px -1px 0 0 #475e5e;
+  background-color: #94b8b8;
+  border-color: #3d5c5c;
 }
 
-.inside-header:active {
+nav > button:active {
   box-shadow:
     inset 1px 1px 0 0 #475e5e;
 }
 
+div.progress-check > div.circle {
+  width: 1%;
+
+  max-height: 0%;
+
+  padding-top: 1%;
+
+  float: left;
+
+  display: inline-block;
+
+  position: relative;
+  top: 15%; left: 0%;
+  transform: translate(-50%,-50%);
+
+  margin-top: 1.5%;
+  margin-left: 2%;
+
+  background-color: #2E353B;
+  border-color: black;
+}
+
+.progress-check {
+  width: 100%;
+  height: 100%;
+}
+
 .box {
-  background-color: inherit;
   border-style: solid;
   border-width: 1px;
 }
 
-.canvas {
-  height: 6%;
-  width: inherit;
-  display: inline-block;
-  background-image: url("banner.jpg");
-  border-color: black;
-
+.circle {
+  height: auto;
+  border-radius: 50%;
 }
 
-.progress-check {
-    display: inline-block;
-    border-radius: 50%;
-    margin-left: 2%;
-    width: 1%;
-    height: 18%;
-    background-color: #2E353B;
-    border-color: black;
-    float: left;
+.speech-bubble {
+  background-color: white;
 
-    margin-top: 1.5%;
-    /*transform: translate(-50%,-50%);*/
-  }
+  border-color: white;
+
+  border-radius: 10px;
+  border-top: 0;
+  border-left: 0;
+
+  font-family: 'Press Start 2P', cursive;
+  color: black;
+
+  overflow:hidden;
+
+  box-sizing: border-box;
+  padding: 1.0% 1.5% 0% 2%;
+
+  box-shadow:
+    inset 1px 1px 0 0 black,
+    inset -1px -1px 0 0 black;
+}
+
+#banner {
+  width: inherit;
+  height: 7%;
+}
 
 #title {
-  /*display: inline-block;*/
-  height: 8%;
-  width: 17%;
+  height: 11%;
 
-  position: relative;
-  top: 40%; left: 50%;
+  position: absolute;
+  top: 55%; left: 50%;
   transform: translate(-50%,-50%);
 
-  border-color: white;
-  border-radius: 10px;
-  border-top: none;
-  border-left: none;
-  background-color: white;
-
-  font-family: 'Press Start 2P', cursive;
-  color: black;
-  font-size: 150%;
-
   text-align: center;
-  vertical-align: middle;
-  line-height: 70px;
-  box-shadow:
-    inset 1px 1px 0 0 black,
-    inset -1px -1px 0 0 black;
-}
 
-#title-caption {
-  /*display: inline-block;*/
-  height: 6%;
-  width: 35%;
+  font-size: 225%;
 
-  position: relative;
-  top: 45%; left: 50%;
-  transform: translate(-50%,-50%);
-
-  border-color: white;
-  border-radius: 10px;
-  border-top: none;
-  border-left: none;
-  background-color: white;
-
-  font-family: 'Press Start 2P', cursive;
-  color: black;
-  font-size: 100%;
-
-  text-align: center;
-  vertical-align: middle;
-  line-height: 60px;
-  box-shadow:
-    inset 1px 1px 0 0 black,
-    inset -1px -1px 0 0 black;
+  z-index: 1;
 }

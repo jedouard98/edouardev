@@ -433,6 +433,4 @@
 		// callback for reset
 		resetCallback: function() {}
 	};
-
-
 }(window.jQuery);
