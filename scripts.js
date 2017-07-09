@@ -14,6 +14,7 @@ setTimeout(function () {
 timedIconPowerOn();
 
 setTimeout (animateTitle, 1700);
+
 // setTimeout (function() { blinking('#cursor'); }, 1700);
 
 function blinking(element) {
