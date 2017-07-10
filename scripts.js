@@ -1,3 +1,11 @@
+$(document).ready(function() {
+   $('nav').localScroll({duration:800});
+});
+
+$(document).ready(function() {
+   $('#banner').localScroll({duration:800});
+});
+
 $('#title').typed({
   strings: ['edouar<span id=\'dev\'>dev</span>'],
   typeSpeed: 30
@@ -46,16 +54,16 @@ function animateTitle() {
 function powerOnIcon(powerName, isFancy) {
   var color;
   switch (powerName) {
-    case '#home':
+    case '#home-circle':
       color = '#F2C2CD';
       break;
-    case '#about':
+    case '#about-circle':
       color = '#FFE4CD';
       break;
-    case '#projects':
+    case '#projects-circle':
       color = '#CAE8BB';
       break;
-    case '#contact':
+    case '#contact-circle':
       color = '#A7A9C8';
       break;
   }
@@ -97,16 +105,16 @@ function timedIconPowerOn() {
   var intervalId = setInterval(function() {
     switch (count) {
       case 1:
-        powerOnIcon('#home', true);
+        powerOnIcon('#home-circle', true);
         break;
       case 2:
-        powerOnIcon('#about', true);
+        powerOnIcon('#about-circle', true);
         break;
       case 3:
-        powerOnIcon('#projects', true);
+        powerOnIcon('#projects-circle', true);
         break;
       case 4:
-        powerOnIcon('#contact', true);
+        powerOnIcon('#contact-circle', true);
         break;
       case 5:
         clearInterval(intervalId);

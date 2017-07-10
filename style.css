@@ -8,6 +8,12 @@ html, body {
     padding: 0;
 }
 
+a {
+  color: inherit;
+  text-decoration:none;
+  cursor:pointer;
+ }
+
 header {
   width: inherit;
   height: 12%;
@@ -36,13 +42,15 @@ button:focus {
   outline: none;
 }
 
-button#title:hover {
+a#title:hover {
   border-color: #F2C2CD;
   border-style: solid;
   border-width: thick;
 }
 
-nav > button {
+a > button {
+  -webkit-transition: all 0.5s ease;
+
   width: 10%;
   height: 65%;
 
@@ -63,7 +71,7 @@ nav > button {
   border-color: #3d5c5c;
 }
 
-nav > button:active {
+a > button:active {
   box-shadow:
     inset 1px 1px 0 0 #475e5e;
 }
@@ -138,6 +146,8 @@ div.progress-check > div.circle {
   position: absolute;
   top: 55%; left: 50%;
   transform: translate(-50%,-50%);
+
+  padding-top: 2%;
 
   text-align: center;
 
