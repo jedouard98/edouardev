@@ -6,10 +6,23 @@ $(document).ready(function() {
    $('#banner').localScroll({duration:800});
 });
 
-$('#title').typed({
+$('#home-title').typed({
   strings: ['edouar<span id=\'dev\'>dev</span>'],
   typeSpeed: 30
 });
+
+var on = true;
+
+setInterval(function() {
+  if (on) {
+    $('.blink').css('color', 'black');
+  }
+  else {
+    $('.blink').css('color', 'white');
+  }
+  on = !on;
+
+}, 400);
 
 setTimeout(function () {
   $('#dev').animate({color:'#D0426D'}, 500);
@@ -19,9 +32,9 @@ setTimeout(function () {
   $('#cursor').css('padding-bottom', '50%');
 }, 2000);
 
-timedIconPowerOn();
+// timedIconPowerOn();
 
-setTimeout (animateTitle, 1700);
+setTimeout (animateTitle, 2000);
 
 // setTimeout (function() { blinking('#cursor'); }, 1700);
 
@@ -42,16 +55,16 @@ function animateTitle() {
   var up = true;
   setInterval(function () {
     if (up) {
-      $('#title').css('top', '55%');
+      $('#home-title').css('top', '55%');
     }
     else {
-      $('#title').css('top', '55.5%');
+      $('#home-title').css('top', '55.5%');
     }
     up = !up;
   }, 900);
 }
 
-function powerOnIcon(powerName, isFancy) {
+function powerOnIcon(powerName) {
   var color;
   switch (powerName) {
     case '#home-circle':
@@ -64,17 +77,10 @@ function powerOnIcon(powerName, isFancy) {
       color = '#CAE8BB';
       break;
     case '#contact-circle':
-      color = '#A7A9C8';
+      color = '#F2C2CD';
       break;
   }
-  if (isFancy) {
-    $(powerName).animate({
-      backgroundColor: color,
-    }, 1000);
-  }
-  else {
-    $(powerName).css('background-color', color);
-  }
+  $(powerName).css('background-color', color);
 }
 
 function powerOffIcon(powerName) {
@@ -94,7 +100,7 @@ function animateIconPower(powerName){
       }
     }
     else {
-      powerOnIcon(powerName, false);
+      powerOnIcon(powerName);
     }
     on = !on;
   }, 200);
@@ -105,16 +111,16 @@ function timedIconPowerOn() {
   var intervalId = setInterval(function() {
     switch (count) {
       case 1:
-        powerOnIcon('#home-circle', true);
+        powerOnIcon('#home-circle');
         break;
       case 2:
-        powerOnIcon('#about-circle', true);
+        powerOnIcon('#about-circle');
         break;
       case 3:
-        powerOnIcon('#projects-circle', true);
+        powerOnIcon('#projects-circle');
         break;
       case 4:
-        powerOnIcon('#contact-circle', true);
+        powerOnIcon('#contact-circle');
         break;
       case 5:
         clearInterval(intervalId);
@@ -123,3 +129,39 @@ function timedIconPowerOn() {
     count++;
   }, 300);
 };
+
+$(document).on('scroll', function() {
+    if($(this).scrollTop()>$('#home').position().top){
+        powerOnIcon('#home-circle');
+    }
+    else {
+      powerOffIcon('#home-circle');
+    }
+})
+
+$(document).on('scroll', function() {
+    if($(this).scrollTop()>=$('#about').position().top){
+        powerOnIcon('#about-circle');
+    }
+    else {
+      powerOffIcon('#about-circle');
+    }
+})
+
+$(document).on('scroll', function() {
+    if($(this).scrollTop()>=$('#projects').position().top){
+        powerOnIcon('#projects-circle');
+    }
+    else {
+      powerOffIcon('#projects-circle');
+    }
+})
+
+$(document).on('scroll', function() {
+    if($(this).scrollTop()>=$('#contact').position().top){
+        powerOnIcon('#contact-circle');
+    }
+    else {
+      powerOffIcon('#contact-circle');
+    }
+})

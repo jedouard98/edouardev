@@ -2,7 +2,6 @@
 
 html, body {
     width: 100%;
-    height: 400%;
 
     margin: 0;
     padding: 0;
@@ -14,9 +13,14 @@ a {
   cursor:pointer;
  }
 
+ #about {
+   visibility: hidden;
+   vertical-align: top;
+ }
+
 header {
   width: inherit;
-  height: 12%;
+  height: 9%;
 
   position: fixed;
 
@@ -25,10 +29,10 @@ header {
   padding-bottom: 1%;
 
   box-shadow:
-    inset 1px 1px 0 0 #ffffff,
-    inset -1px -1px 0 0 #475e5e;
-  background-color: #94b8b8;
-  border-color: #3d5c5c;
+    inset 1px 1px 0 0 #ff9999,
+    inset -1px -1px 0 0 #4d0000;
+  background-color: #853641;
+  border-color: #1a0000;
   z-index: 2;
 }
 
@@ -42,11 +46,15 @@ button:focus {
   outline: none;
 }
 
-a#title:hover {
+a#home-title:hover {
   border-color: #F2C2CD;
   border-style: solid;
   border-width: thick;
 }
+
+/*
+TODO: keep middle text centered!
+*/
 
 a > button {
   -webkit-transition: all 0.5s ease;
@@ -58,17 +66,17 @@ a > button {
 
   color: #ffffff;
   font-family: 'Press Start 2P', cursive;
-  text-shadow: -1px 0 #3d5c5c, 0 1px #3d5c5c, 1px 0 #3d5c5c, 0 -1px #3d5c5c;
-  font-size: 90%;
+  text-shadow: -1px 0 #1a0000, 0 1px #1a0000, 1px 0 #1a0000, 0 -1px #1a0000;
+  font-size: 1vw;
 
 
   margin-right: 2.5%;
 
   box-shadow:
-    inset 1px 1px 0 0 #ffffff,
-    inset -1px -1px 0 0 #475e5e;
-  background-color: #94b8b8;
-  border-color: #3d5c5c;
+    inset 1px 1px 0 0 #ff9999,
+    inset -1px -1px 0 0 #4d0000;
+  background-color: #853641;
+  border-color: #1a0000;
 }
 
 a > button:active {
@@ -91,7 +99,7 @@ div.progress-check > div.circle {
   top: 15%; left: 0%;
   transform: translate(-50%,-50%);
 
-  margin-top: 1.5%;
+  margin-top: 1.25%;
   margin-left: 2%;
 
   background-color: #2E353B;
@@ -135,23 +143,146 @@ div.progress-check > div.circle {
     inset -1px -1px 0 0 black;
 }
 
-#banner {
-  width: inherit;
-  height: 7%;
-}
-
-#title {
+.title {
   height: 11%;
-
-  position: absolute;
-  top: 55%; left: 50%;
-  transform: translate(-50%,-50%);
 
   padding-top: 2%;
 
   text-align: center;
 
-  font-size: 225%;
+  font-size: 2.5vw;
+
+  top: 55%; left: 50%;
+  transform: translate(-50%,-50%);
 
   z-index: 1;
+}
+
+.page {
+  padding-top: 7%;
+  /* height: 7%; */
+  padding-left: 15%;
+  padding-right: 15%;
+  padding-bottom: 3%;
+  border-color: black;
+  background-color: #f2f2f2;
+}
+
+#banner {
+  width: inherit;
+  height: 7%;
+}
+
+#home-title {
+  position: absolute;
+  font-size: 4vh;
+}
+
+#contact-title {
+  display: inline-block;
+  width: 20%;
+}
+
+
+.content-title {
+  margin-bottom: 5%;
+  padding: 2%;
+  font-family: sans-serif;
+  border-color: #1a0000;
+  text-align: center;
+  width: inherit;
+  background-color: white;
+
+  box-shadow: 12px 12px 0px 2px black;
+}
+
+.icon-content {
+  font-size: 6vw;
+  text-align: center;
+}
+
+.contact-links {
+  margin-top: 5%;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  height: 400px;
+}
+
+.project {
+  margin-top: 5%;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  height: 400px;
+}
+
+.project-image {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 30%;
+  margin-right: 5%;
+  height: 75%;
+  background-color: white;
+  box-shadow: 12px 12px 0px 2px black;
+}
+
+#googleep {
+  background-image: url('googlelogo.png');
+}
+
+#makerscollective {
+  background-image: url('arduinouno.png');
+}
+
+#nycdoitt {
+  background-image: url('nycdoitt.png');
+}
+
+#facebook {
+  background-image: url('facebook.png');
+}
+
+#linkedin {
+  background-image: url('linkedin.png');
+}
+
+#github {
+  background-image: url('github.png');
+}
+
+
+.project-content {
+  padding-left: 2%;
+  font-size: 1.4vw;
+  height: 75%;
+  flex: 1;
+  width: 30%;
+  font-family: sans-serif;
+  border-color: #1a0000;
+  background-color: white;
+  box-shadow: 12px 12px 0px 2px black;
+}
+
+.divider {
+  border-top: solid thin black;
+
+}
+
+.content {
+  margin-top: 4%;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.4vw;
+  padding: 2%;
+  font-family: sans-serif;
+  border-color: #1a0000;
+  text-align: center;
+  background-color: white;
+
+  box-shadow: 12px 12px 0px 2px black;
 }
