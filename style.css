@@ -81,7 +81,7 @@ a > button {
 
 a > button:active {
   box-shadow:
-    inset 1px 1px 0 0 #475e5e;
+    inset 2px 2px 0 0 #4d0000;
 }
 
 div.progress-check > div.circle {
@@ -166,6 +166,10 @@ div.progress-check > div.circle {
   padding-bottom: 3%;
   border-color: black;
   background-color: #f2f2f2;
+
+  box-shadow:
+    inset 3px 3px 0 0 white,
+    inset -1px -1px 0 0 #8c8c85;
 }
 
 #banner {
